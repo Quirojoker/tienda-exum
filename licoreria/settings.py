@@ -34,9 +34,19 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['*', 'web-production-7d911.up.railway.app']
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "web-production-7d911.up.railway.app",
+    "licoresvalhalla.com",
+    "www.licoresvalhalla.com",
+]
 
-CSRF_TRUSTED_ORIGINS = ['http://*','https://web-production-7d911.up.railway.app'] 
+CSRF_TRUSTED_ORIGINS = [
+    "https://web-production-7d911.up.railway.app",
+    "https://licoresvalhalla.com",
+    "https://www.licoresvalhalla.com",
+    ] 
 
 # Application definition
 
