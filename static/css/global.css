@@ -8,8 +8,13 @@
 
 body {
     font-family: 'Cinzel', serif;
-    background-color: #1a1a1a;
-    color: #e0e0e0;
+    background: radial-gradient(
+        120% 120% at 50% 10%,
+        #1e293b 30%,
+        #0f172a 100%
+    );
+    background-color: #1e293b;
+    color: black;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -17,7 +22,11 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #1a1a1a;
+    background: radial-gradient(
+        120% 120% at 50% 10%,
+        #1e293b 30%,
+        #1e293b 100%
+    );
 }
 
 /* --- Estilos del logo --- */

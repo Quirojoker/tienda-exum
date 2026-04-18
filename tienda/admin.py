@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import categoria, producto, cliente, pedido, detallepedido, ImagenProducto, Carrito, ItemCarrito
+from .models import  banner,categoria, producto, cliente, pedido, detallepedido, ImagenProducto, Carrito, ItemCarrito
 
-#fecha: 12SEP2025 se activa el admin de Django
+admin.site.register(banner) 
 admin.site.register(categoria)
 admin.site.register(producto)
 admin.site.register(ImagenProducto)

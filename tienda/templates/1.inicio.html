@@ -6,18 +6,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mi Licorera</title>
-        <meta name="description" content="Compra cervezas, vinos y licores online, con entrega rápida en tu ciudad.">
+        <title>Exum</title>
+        <meta name="description" content="Descubre productos innovadores y en tendencia con envío rápido y pago contra entrega. Compra fácil, seguro y sin complicaciones.">
 
         <!-- Tags OG para compartir-->
-        <meta property="og:title" content="Valhalla - Licores Premium">
-        <meta property="og:description" content="Compra cervezas, vinos y licores online">
-        <meta property="og:image" content="{% static 'tienda/img/apple-touch-icon-76x76.png' %}">
+        <meta property="og:title" content="Exum | Innovación y estilo en un solo lugar">
+        <meta property="og:description" content="Productos únicos que mejoran tu día a día. Compra fácil, rápido y seguro.">
+        <meta property="og:image" content="{% static 'tienda/img/apple-touch-icon.png' %}">
         <meta property="og:url" content="{{ request.build_absolute_uri }}">
         <meta property="og:type" content="website">
 
         <!-- Favicon-->
-        <link rel="icon" type="image/png" href="{% static 'tienda/img/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" href="{% static 'tienda/img/faviconExum-32x32.png' %}">
 
         <!-- Font Awesome CSS -->
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -53,11 +53,11 @@
 
                 <img src="{% static 'tienda/img/road-2.webp' %}" alt="road" class="parallax-img-4" width="375" height="667" loading="lazy">
 
-                <h2 id="text">Valhalla</h2>
+                <h2 id="text">Exum</h2>
             </section>
 
             <div class="age-verifier-spacer">
-                <button id="verify-button">Soy mayor de 18 años</button>
+                <button id="verify-button">Bienvenidos</button>
             </div>
         </div>
 
@@ -67,46 +67,70 @@
                 <nav class="navbar navbar-expand-lg">
                     <div class="container">
                         <a class="navbar-brand" href="{% url 'inicio' %}">
-                            <img src="{% static 'tienda/img/logo.png' %}" alt="Vikinga" class="logo">
-                            <span class="ms-2 fw-bold fs-4">Valhalla</span>
+                            <img src="{% static 'tienda/img/Exum.png' %}" alt="Exum" class="logo">
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon">
+
+                            </span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="#Nuestras-Categorías">Categorías</a>
+                                    <a class="nav-link text-white" href="#Nuestras-Categorías">
+                                        Categorías
+                                    </a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
+                                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Productos
+                                    </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="{% url 'categoria_productos' categoria_id=2 %}">Cervezas Comerciales</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'categoria_productos' categoria_id=3 %}">Cervezas Artesanles</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'categoria_productos' categoria_id=4 %}">Vinos Comerciales</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'categoria_productos' categoria_id=5 %}">Vinos Artesanales</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'categoria_productos' categoria_id=9 %}">Aguardiente</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'categoria_productos' categoria_id=10 %}">Ron</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'categoria_productos' categoria_id=11 %}">Whisky</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'categoria_productos' categoria_id=8 %}">Sangría</a></li>
+                                        {% for categoria in categorias %}
+                                            <li>
+                                                <a class="dropdown-item" href="{% url 'categoria_productos' categoria.id %}">
+                                                    {{ categoria.nombre }}
+                                                </a>
+                                            </li>
+                                            {% empty %}
+                                                <li>
+                                                    <span class="dropdown-item">
+                                                        No hay categorías
+                                                    </span>
+                                                </li>
+                                        {% endfor %}
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="#Nuestras-Promociones">Promociones</a>
+                                    <a class="nav-link text-white" href="#Nuestras-Promociones">
+                                        Promociones
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="#Nuestras-Recetas">Recetas</a>
+                                    <a class="nav-link text-white" href="#Nuestras-Recetas">
+                                        Recetas
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="{% url 'contacto' %}">Contacto</a>
+                                    <a class="nav-link text-white" href="{% url 'contacto' %}">
+                                        Contacto
+                                    </a>
                                 </li>
                             </ul>
                             <div class="shop-icon">
                                 <ul>
-                                    <li><a href="#"><i class="fa-solid fa-shield-heart"></i></a></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa-solid fa-shield-heart">
+
+                                            </i>
+                                        </a>
+                                    </li>
                                     <li>
                                         <a href="{% url 'ver_carrito' %}" class="position-relative">
-                                            <i class="fa-solid fa-cart-shopping"></i>
+                                            <i class="fa-solid fa-cart-shopping">
+
+                                            </i>
                                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count" 
                                                 {% if not request.session.cart_items_count or request.session.cart_items_count == 0 %}style="display: none;"{% endif %}>
                                                 {{ request.session.cart_items_count|default:0 }}
@@ -129,7 +153,9 @@
                                 <input type="text" name="q" placeholder="¿Qué estás buscando?" class="form-control-1 me-2 search-input" value="{{ request.GET.q }}">
                                 <button type="submit" class="btn search-btn">
                                     <div class="search-icon-1">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <i class="fa-solid fa-magnifying-glass">
+                                            
+                                        </i>
                                     </div>
                                 </button>
                             </form>
@@ -162,12 +188,22 @@
                         </div>
                         <div class="container">
                             <div class="slider-content">
-                                <h6>Bienvenidos</h6>
-                                <h2 class="titulo-principal">Licores y Sabores únicos</h2>
-                                <p class="p-principal">Refrescá tus planes, Brindá con nosotros</p>
+                                <h6>
+                                    Bienvenidos
+                                </h6>
+                                <h2 class="titulo-principal">
+                                    Licores y Sabores únicos
+                                </h2>
+                                <p class="p-principal">
+                                    Refrescá tus planes, Brindá con nosotros
+                                </p>
                                 <h2 class="titulo-secundario">Colección de Experiencias</h>
-                                    <p>Descubre nuestra selección exclusiva de licores y bebidas premium...</p>
-                                    <a href="{% url 'categoria_productos' categoria_id=2 %}" class="btn">Explorar ahora</a>
+                                    <p>
+                                        Descubre nuestra selección exclusiva de licores y bebidas premium...
+                                    </p>
+                                    <a href="{% url 'categoria_productos' categoria_id=2 %}" class="btn">
+                                        Explorar ahora
+                                    </a>
                             </div>
                         </div>
                     </div>
@@ -185,10 +221,18 @@
                         </div>
                         <div class="container">
                             <div class="slider-content">
-                                <h6 class="titulo-principal">Tradición y Pasión</h6>
-                                <h2 class="titulo-secundario">Vinos Artesanales Colombianos</h2>
-                                <p class="frase">sabores auténticos de nuestra tierra.</p>
-                                <a href="{% url 'categoria_productos' categoria_id=5 %}" class="btn">Descubrir Colección</a>
+                                <h6 class="titulo-principal">
+                                    Tradición y Pasión
+                                </h6>
+                                <h2 class="titulo-secundario">
+                                    Vinos Artesanales Colombianos
+                                </h2>
+                                <p class="frase">
+                                    sabores auténticos de nuestra tierra.
+                                </p>
+                                <a href="{% url 'categoria_productos' categoria_id=5 %}" class="btn">
+                                    Descubrir Colección
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -210,9 +254,15 @@
                         </div>
                         <div class="container">
                             <div class="slider-content">
-                                <h6 class="titulo-principal">Frío. Intenso. Único.</h6>
-                                <h2 class="titulo-secundario">Licores que elevan la experiencia más allá del sabor.</h2>
-                                <a href="{% url 'categoria_productos' categoria_id=9 %}" class="btn">Descúbrelo</a>
+                                <h6 class="titulo-principal">
+                                    Frío. Intenso. Único.
+                                </h6>
+                                <h2 class="titulo-secundario">
+                                    Licores que elevan la experiencia más allá del sabor.
+                                </h2>
+                                <a href="{% url 'categoria_productos' categoria_id=9 %}" class="btn">
+                                    Descúbrelo
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -225,58 +275,98 @@
                         </div>
                         <div class="container">
                             <div class="slider-content">
-                                <h1 class="titulo-principal">Cocteles</h1>
+                                <h1 class="titulo-principal">
+                                    Cocteles
+                                </h1>
                                 <svg class="frase-1" viewBox="0 0 500 200" width="500" height="200">
-                                    <path id="curva" d="M 50,50 A 150,100 0 0 0 350,50" fill="transparent" />
+                                    <path id="curva" d="M 50,50 A 150,100 0 0 0 350,50" fill="transparent"/>
                                     <text>
-                                        <textPath href="#curva" startOffset="50%" text-anchor="middle" fill="white"
-                                            font-size="40">
+                                        <textPath href="#curva" startOffset="50%" text-anchor="middle" fill="white" font-size="40">
                                             Tentación
                                         </textPath>
                                     </text>
                                 </svg>
                                 <svg class="frase-2" viewBox="0 -40 500 140" width="500" height="100">
-                                    <path id="curvaTest" d="M 50,80 Q 250,-60 450,80" fill="transparent"
-                                        stroke="transparent" />
+                                    <path id="curvaTest" d="M 50,80 Q 250,-60 450,80" fill="transparent" stroke="transparent"/>
                                     <text fill="white" font-size="50">
-                                        <textPath href="#curvaTest" startOffset="50%" text-anchor="middle"
-                                            dominant-baseline="middle">
+                                        <textPath href="#curvaTest" startOffset="50%" text-anchor="middle" dominant-baseline="middle">
                                             Sensación
                                         </textPath>
                                     </text>
                                 </svg>
                                 <svg class="frase-3" viewBox="0 0 500 200" width="500" height="200">
-                                    <path id="curva" d="M 50,50 A 150,100 0 0 0 350,50" fill="transparent" />
+                                    <path id="curva" d="M 50,50 A 150,100 0 0 0 350,50" fill="transparent"/>
                                     <text>
-                                        <textPath href="#curva" startOffset="50%" text-anchor="middle" fill="white"
-                                            font-size="40">
+                                        <textPath href="#curva" startOffset="50%" text-anchor="middle" fill="white" font-size="40">
                                             Fusión
                                         </textPath>
                                     </text>
                                 </svg>
                                 <svg class="frase-4" viewBox="0 -40 500 140" width="500" height="100">
-                                    <path id="curvaTest" d="M 50,80 Q 250,-60 450,80" fill="transparent"
-                                        stroke="transparent" />
+                                    <path id="curvaTest" d="M 50,80 Q 250,-60 450,80" fill="transparent" stroke="transparent"/>
                                     <text fill="white" font-size="50">
-                                        <textPath href="#curvaTest" startOffset="50%" text-anchor="middle"
-                                            dominant-baseline="middle">
+                                        <textPath href="#curvaTest" startOffset="50%" text-anchor="middle" dominant-baseline="middle">
                                             Encanto
                                         </textPath>
                                     </text>
                                 </svg>
                                 <svg class="frase-5" viewBox="0 0 500 200" width="500" height="200">
-                                    <path id="curva" d="M 50,50 A 150,100 0 0 0 350,50" fill="transparent" />
+                                    <path id="curva" d="M 50,50 A 150,100 0 0 0 350,50" fill="transparent"/>
                                     <text>
-                                        <textPath href="#curva" startOffset="50%" text-anchor="middle" fill="white"
-                                            font-size="40">
+                                        <textPath href="#curva" startOffset="50%" text-anchor="middle" fill="white" font-size="40">
                                             Instinto
                                         </textPath>
                                     </text>
                                 </svg>
-                                <a href="#" class="btn">Ver Recetas</a>
+                                <a href="#" class="btn">
+                                    Ver Recetas
+                                </a>
                             </div>
                         </div>
                     </div>
+
+                    {% for banner in banners %}
+                    <div class="slides-4">
+                        <div class="overlay-images">
+                            <img src="{{ banner.imagen_1.url }}" alt="{{ banner.titulo }}" class="banner-image-1" loading="high">
+
+                            {% if banner.imagen_2 %}
+                            <img src="{{ banner.imagen_2.url }}" alt="{{ banner.titulo }}" class="banner-image-2" loading="high">
+                            {% endif %}
+
+                            {% if banner.imagen_3 %}
+                            <img src="{{ banner.imagen_3.url }}" alt="{{ banner.titulo }}" class="banner-image-3" loading="high">
+                            {% endif %}
+
+                            {% if banner.imagen_4 %}
+                            <img src="{{ banner.imagen_4.url }}" alt="{{ banner.titulo }}" class="banner-image-4" loading="high">
+                            {% endif %}
+                            
+                            {% if banner.imagen_5 %}
+                            <img src="{{ banner.imagen_5.url }}" alt="{{ banner.titulo }}" class="banner-image-5" loading="high">
+                            {% endif %}
+                        </div>
+                        <div class="container">
+                            <div class="slider-content">
+                                
+                                <h2 class="titulo-principal">
+                                    {{ banner.titulo }}
+                                </h2>
+
+                                <p class="p-principal">
+                                    {{ banner.descripcion }}
+                                </p>
+
+                                {% if banner.boton_texto %}
+                                <a href="#" class="btn">
+                                {{ banner.boton_texto }}
+                                </a>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
             </section>
 

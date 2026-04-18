@@ -26,12 +26,20 @@ header.loaded {
 }
 
 .navbar-brand img.logo {
+    height: 45px;
+    width: auto;
     transition: filter 0.5s ease-in-out;
-    filter: brightness(1) invert(1);
+    filter: brightness(1) invert(0) drop-shadow(0 0 6px var(--primary-color));
+    animation: glow 3s infinite alternate;
 }
 
-.navbar-brand:hover img.logo {
-    filter: brightness(1) invert(1) drop-shadow(0 0 5px var(--primary-color));
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 3px var(--primary-color));
+    }
+    to {
+        filter: drop-shadow(0 0 10px var(--primary-color));
+    }
 }
 
 .navbar-brand span {

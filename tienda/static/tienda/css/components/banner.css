@@ -1,6 +1,6 @@
 /* Estilo del banner (slide) */
 .hero-sec {
-    background-color: #1a1a1a;
+    background-color: transparent;
     position: relative;
     overflow: hidden;
 }
@@ -8,7 +8,9 @@
 .hero-slider .slides,
 .hero-slider .slides-1,
 .hero-slider .slides-2,
-.hero-slider .slides-3 {
+.hero-slider .slides-3,
+.hero-slider .slides-4
+ {
     background-size: cover;
     background-position: center;
     padding: 180px 0;
@@ -61,6 +63,64 @@
     color: var(--primary-color);
     transition: 0.5s;
 }
+
+/* slide dinamico 1 */
+
+/* Logo Exum */
+.banner-image-1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: auto;
+}
+/* blackmen */
+.banner-image-2 {
+    position: absolute;
+    top: 0%;
+    left: -10%;
+    z-index: 1;
+    width: 60%;
+    height: auto;
+}
+
+/* girlwhite */
+.banner-image-3 {
+    position: absolute;
+    top: 8%;
+    right: -5%;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+}
+
+.slides-4 .slider-content {
+    position: relative;
+    height: 600px;
+}
+
+.slides-4 .slider-content .titulo-principal {
+    position: absolute;
+    top: -15%;
+    left: 45%;
+    white-space: nowrap;
+}
+
+.slides-4 .slider-content .p-principal {
+    position: absolute;
+    top: 30%;
+    left: 68%;
+    white-space: nowrap;
+}
+
+.slides-4 .slider-content .btn {
+    position: absolute;
+    top: 38%;
+    left: 83%;
+    white-space: nowrap;
+}
+
 
 /* slide 1 */
 .overlay-images .ice:nth-child(1)

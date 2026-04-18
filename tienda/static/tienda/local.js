@@ -5,7 +5,7 @@ $('.hero-slider').slick({
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false, // cambiar a true para activar el autoplay //
     autoplaySpeed: 2000,
     arrows: false,
     accessibility: false
@@ -114,33 +114,33 @@ window.addEventListener("load", () => {
 });
 
 // Efecto de nieve //
-const TOTAL_SNOWFLAKES = 50;
-const snowContainer = document.querySelector('.hero-sec .snow-container');
+//const TOTAL_SNOWFLAKES = 50;
+//const snowContainer = document.querySelector('.hero-sec .snow-container');
 
 // VERIFICAR que el contenedor de nieve existe
-if (snowContainer) {
-    function createSnowflake() {
-        const snowflake = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        snowflake.classList.add("snowflake");
-        snowflake.setAttribute("viewBox", "0 0 24 24");
-        snowflake.innerHTML = `<path fill="white" d="M12 2L13 8H17L14 10L15 16L12 14L9 16L10 10L7 8H11L12 2Z"/>`;
+//if (snowContainer) {
+    //function createSnowflake() {
+        //const snowflake = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        //snowflake.classList.add("snowflake");
+        //snowflake.setAttribute("viewBox", "0 0 24 24");
+        //snowflake.innerHTML = `<path fill="white" d="M12 2L13 8H17L14 10L15 16L12 14L9 16L10 10L7 8H11L12 2Z"/>`;
 
-        snowflake.style.left = Math.random() * 100 + "%";
-        snowflake.style.animationDuration = 5 + Math.random() * 5 + "s";
-        snowflake.style.animationDelay = Math.random() * 5 + "s";
+        //snowflake.style.left = Math.random() * 100 + "%";
+        //snowflake.style.animationDuration = 5 + Math.random() * 5 + "s";
+        //snowflake.style.animationDelay = Math.random() * 5 + "s";
 
-        snowContainer.appendChild(snowflake);
+        //snowContainer.appendChild(snowflake);
 
-        snowflake.addEventListener("animationend", () => {
-            snowflake.remove();
-            createSnowflake();
-        });
-    }
+        //snowflake.addEventListener("animationend", () => {
+            //snowflake.remove();
+            //createSnowflake();
+        //});
+    //}
 
-    for (let i = 0; i < TOTAL_SNOWFLAKES; i++) {
-        setTimeout(createSnowflake, i * 200);
-    }
-}
+    //for (let i = 0; i < TOTAL_SNOWFLAKES; i++) {
+        //setTimeout(createSnowflake, i * 200);
+    //}
+//}
 
 // Web share API //
 function shareProduct() {

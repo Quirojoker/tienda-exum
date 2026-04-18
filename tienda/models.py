@@ -1,12 +1,23 @@
 from django.db import models
 
-#fecha: 12SEP2025 se crean modelos para la tienda.
+#banner
+class banner(models.Model):
+    titulo = models.CharField(max_length=200, blank=True)
+    descripcion = models.TextField(blank=True)
+    imagen_1 = models.ImageField(upload_to='exum/banners/')
+    imagen_2 = models.ImageField(upload_to='exum/banners/', blank=True, null=True)
+    imagen_3 = models.ImageField(upload_to='exum/banners/', blank=True, null=True)
+    imagen_4 = models.ImageField(upload_to='exum/banners/', blank=True, null=True)
+    imagen_5 = models.ImageField(upload_to='exum/banners/', blank=True, null=True)
+    boton_texto = models.CharField(max_length=100, blank=True)
+    boton_link = models.CharField(max_length=200, blank=True)
+    activo = models.BooleanField(default=True)
 
-#categorias (cervezas comerciales, cervezas artesanales, vinos comerciales, vinos artesanales, licores).
+#categorias (exum store).
 class categoria (models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField(blank=True)
-    imagen_banner = models.ImageField(upload_to='categorias/', blank=True, null=True)
+    imagen_banner = models.ImageField(upload_to='exum/categorias/', blank=True, null=True)
     texto_superpuesto = models.CharField(max_length=200, blank=True)
     descripcion_larga = models.TextField(blank=True)
 
@@ -19,7 +30,7 @@ class producto(models.Model):
     descripcion = models.TextField(blank=True)
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.PositiveBigIntegerField()
-    imagen = models.ImageField(upload_to='productos/', blank=True, null=True)#pendiente definir urls banco de img.
+    imagen = models.ImageField(upload_to='exum/productos/', blank=True, null=True)
     categoria = models.ForeignKey(categoria, on_delete=models.CASCADE)
     en_promocion = models.BooleanField(default=False)
     precio_promocional = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
@@ -31,7 +42,7 @@ class producto(models.Model):
 #imagenes detalle del producto
 class ImagenProducto(models.Model):
     producto = models.ForeignKey(producto, on_delete=models.CASCADE)
-    imagen = models.ImageField(upload_to='productos/')
+    imagen = models.ImageField(upload_to='exum/productos/')
     orden = models.IntegerField(default=0)
 
     class Meta:
