@@ -6,27 +6,23 @@
     --secondary-color: #0096c7; / Azul claro para hover */
 }
 
+#floatinglines-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
 body {
     font-family: 'Cinzel', serif;
-    background: radial-gradient(
-        120% 120% at 50% 10%,
-        #1e293b 30%,
-        #0f172a 100%
-    );
-    background-color: #1e293b;
-    color: black;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: radial-gradient(
-        120% 120% at 50% 10%,
-        #1e293b 30%,
-        #1e293b 100%
-    );
 }
 
 /* --- Estilos del logo --- */

@@ -32,6 +32,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
         <!-- slick css-->
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -42,10 +43,16 @@
     </head>
 
     <body>
+        <!-- Componente react background -->
+        <div id="floatinglines-background"></div>
+
         <!-- Bloqueo Overlay-->
         <div id="age-verifier">
             <section id="parallax-container">
-                <img src="{% static 'tienda/img/fondo.webp' %}" alt="Fondo" class="parallax-img-1" width="375" height="667" loading="eager" fetchpriority="high">
+
+                <div id="galaxy-background"></div>            
+
+                <!-- <img src="{% static 'tienda/img/fondo.webp' %}" alt="Fondo" class="parallax-img-1" width="375" height="667" loading="eager" fetchpriority="high"> -->
 
                 <img src="{% static 'tienda/img/moon.webp' %}" alt="luna" class="parallax-img-2" width="375" height="211" loading="eager" fetchpriority="high">
 
@@ -62,6 +69,7 @@
         </div>
 
         <div id="main-site-content" style="display: none;">
+            
             <!-- Barra de navegación-->
             <header class="header loaded">
                 <nav class="navbar navbar-expand-lg">
@@ -144,6 +152,7 @@
                 </nav>
             </header>
 
+
             <!-- Barra de busqueda-->
             <section class="search-section py-3">
                 <div class="container">
@@ -176,34 +185,29 @@
                 <div class="hero-slider">
                     <div class="slides">
                         <div class="overlay-images">
-                            <img src="{% static 'tienda/img/hielo-4.webp' %}" alt="hielo-4" class="ice" loading="lazy">
-                            <img src="{% static 'tienda/img/hielo-4.webp' %}" alt="hielo-4" class="ice" loading="lazy">
-                            <img src="{% static 'tienda/img/hielo-3.webp' %}" alt="hielo-3" class="ice" loading="lazy">
-                            <img src="{% static 'tienda/img/hielo-3.webp' %}" alt="hielo-3" class="ice" loading="lazy">
-                            <img src="{% static 'tienda/img/cristal.webp' %}" alt="cristal" class="glass" fetchpriority="high">
-                            <img src="{% static 'tienda/img/tecate.webp' %}" alt="tecate" class="tecate" fetchpriority="high">
-                            <img src="{% static 'tienda/img/corona.webp' %}" alt="corona" class="corona" fetchpriority="high">
-                            <img src="{% static 'tienda/img/poker-lata.webp' %}" alt="poker" class="poker-lata" fetchpriority="high">
-                            <img src="{% static 'tienda/img/hielo.webp' %}" alt="hielo" class="ice" fetchpriority="high">
-                        </div>
+                            <div id="mansory-slide-1"
+                             data-img1="{% static 'tienda/img/Accesorios-mascotas.webp' %}"
+                             data-img2="{% static 'tienda/img/Tecnologia-hogar-1.jpg' %}"
+                             data-img3="{%static 'tienda/img/Accesorios-moda-1.jpg' %}"
+                             data-img4="{% static 'tienda/img/Ethan.jpeg' %}"
+                             data-img5="{% static 'tienda/img/Accesorios-moda-2.jpg' %}"
+                             data-img6="{% static 'tienda/img/Pookie.jpeg' %}"
+                             data-img7="{% static 'tienda/img/Tecnologia-1.jpg' %}"
+                             data-img8="{% static 'tienda/img/Dropi.jpg' %}"
+                             data-img9="{% static 'tienda/img/Ropa-Deportiva.jpg' %}"
+                             data-img10="{% static 'tienda/img/Perfumes.jpg' %}">
+                            </div>
+                        </div> 
+                        
+                        <div id="texttype-slide-1"></div>
+                        
                         <div class="container">
                             <div class="slider-content">
-                                <h6>
-                                    Bienvenidos
-                                </h6>
-                                <h2 class="titulo-principal">
-                                    Licores y Sabores únicos
-                                </h2>
-                                <p class="p-principal">
-                                    Refrescá tus planes, Brindá con nosotros
-                                </p>
-                                <h2 class="titulo-secundario">Colección de Experiencias</h>
-                                    <p>
-                                        Descubre nuestra selección exclusiva de licores y bebidas premium...
-                                    </p>
-                                    <a href="{% url 'categoria_productos' categoria_id=2 %}" class="btn">
-                                        Explorar ahora
-                                    </a>
+                                <h6></h6>
+                                <h2 class="titulo-principal"></h2>
+                                <p class="p-principal"></p>
+                                <h2 class="titulo-secundario"></h2>
+                                    <p></p>
                             </div>
                         </div>
                     </div>
@@ -324,49 +328,6 @@
                             </div>
                         </div>
                     </div>
-
-                    {% for banner in banners %}
-                    <div class="slides-4">
-                        <div class="overlay-images">
-                            <img src="{{ banner.imagen_1.url }}" alt="{{ banner.titulo }}" class="banner-image-1" loading="high">
-
-                            {% if banner.imagen_2 %}
-                            <img src="{{ banner.imagen_2.url }}" alt="{{ banner.titulo }}" class="banner-image-2" loading="high">
-                            {% endif %}
-
-                            {% if banner.imagen_3 %}
-                            <img src="{{ banner.imagen_3.url }}" alt="{{ banner.titulo }}" class="banner-image-3" loading="high">
-                            {% endif %}
-
-                            {% if banner.imagen_4 %}
-                            <img src="{{ banner.imagen_4.url }}" alt="{{ banner.titulo }}" class="banner-image-4" loading="high">
-                            {% endif %}
-                            
-                            {% if banner.imagen_5 %}
-                            <img src="{{ banner.imagen_5.url }}" alt="{{ banner.titulo }}" class="banner-image-5" loading="high">
-                            {% endif %}
-                        </div>
-                        <div class="container">
-                            <div class="slider-content">
-                                
-                                <h2 class="titulo-principal">
-                                    {{ banner.titulo }}
-                                </h2>
-
-                                <p class="p-principal">
-                                    {{ banner.descripcion }}
-                                </p>
-
-                                {% if banner.boton_texto %}
-                                <a href="#" class="btn">
-                                {{ banner.boton_texto }}
-                                </a>
-                                {% endif %}
-
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
                 </div>
             </section>
 
@@ -711,6 +672,13 @@
 
         <!--script local js-->
         <script src="{% static 'tienda/local.js' %}" defer></script>
+
+        <!--script de vite-->
+        <!-- En produccion se necesita algo mas, Vite genera archivos con hashes como main-a3f9b2.js y Django necesita saber cómo encontrarlos. NO OLVIDAR-->
+        <script type="module" src="http://localhost:5173/@vite/client"></script>
+        <script type="module" src="http://localhost:5173/frontend/src/main.jsx"></script>
+
+        
 
     </body>
 

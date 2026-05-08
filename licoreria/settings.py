@@ -59,7 +59,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'cloudinary_storage',
-    'tienda'
+    'tienda',
+    'django_vite',
 ]
 
 MIDDLEWARE = [
@@ -183,3 +184,8 @@ STORAGES = {
         "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
+
+# django-vite settings
+DJANGO_VITE_ASSETS_PATH = BASE_DIR / 'static' / 'dist'
+DJANGO_VITE_DEV_MODE = DEBUG
+DJANGO_VITE_DEV_SERVER_PORT = 5173

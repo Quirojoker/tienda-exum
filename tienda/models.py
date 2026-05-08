@@ -1,18 +1,5 @@
 from django.db import models
 
-#banner
-class banner(models.Model):
-    titulo = models.CharField(max_length=200, blank=True)
-    descripcion = models.TextField(blank=True)
-    imagen_1 = models.ImageField(upload_to='exum/banners/')
-    imagen_2 = models.ImageField(upload_to='exum/banners/', blank=True, null=True)
-    imagen_3 = models.ImageField(upload_to='exum/banners/', blank=True, null=True)
-    imagen_4 = models.ImageField(upload_to='exum/banners/', blank=True, null=True)
-    imagen_5 = models.ImageField(upload_to='exum/banners/', blank=True, null=True)
-    boton_texto = models.CharField(max_length=100, blank=True)
-    boton_link = models.CharField(max_length=200, blank=True)
-    activo = models.BooleanField(default=True)
-
 #categorias (exum store).
 class categoria (models.Model):
     nombre = models.CharField(max_length=100)

@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import banner, categoria, producto, Carrito, ItemCarrito, cliente, pedido, detallepedido
+from .models import categoria, producto, Carrito, ItemCarrito, cliente, pedido, detallepedido
 from django.db.models import Q, Sum
 from django.utils import timezone
 from datetime import datetime, timedelta
@@ -38,7 +38,6 @@ def obtener_promociones_aleatorias():
 def inicio(request):
     cache_key = 'productos_aleatorios_home'
     productos = cache.get(cache_key)
-    banners = banner.objects.filter(activo=True)
     
     if not productos:
         todos_productos_ids = list(producto.objects.values_list('id', flat=True))
@@ -53,8 +52,7 @@ def inicio(request):
 
     return render(request, '1.inicio.html', {
         'productos': productos,
-        'productos_promocion': productos_promocion
-        ,'banners': banners
+        'productos_promocion': productos_promocion,
         })
 
 #Views categoria productos.

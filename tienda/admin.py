@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import  banner,categoria, producto, cliente, pedido, detallepedido, ImagenProducto, Carrito, ItemCarrito
+from .models import  categoria, producto, cliente, pedido, detallepedido, ImagenProducto, Carrito, ItemCarrito
 
-admin.site.register(banner) 
 admin.site.register(categoria)
 admin.site.register(producto)
 admin.site.register(ImagenProducto)

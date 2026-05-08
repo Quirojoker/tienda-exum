@@ -1,3 +1,13 @@
+// Efecto del navbar en el header //
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header')
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled')
+    } else {
+        header.classList.remove('scrolled')
+    }
+})
+
 // Efecto del Banner //
 $('.hero-slider').slick({
     dots: false,
@@ -9,7 +19,7 @@ $('.hero-slider').slick({
     autoplaySpeed: 2000,
     arrows: false,
     accessibility: false
-});
+})
 
 // Efecto de las categorias //
 $('.slider-category').slick({
@@ -62,8 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             imgs.forEach((img, index) => {
                 // velocidades distintas según la capa
-                let speedsY = [-0.1, 0.6, -0.2, 0.1];
-                let speedsX = [0, -0.4, 0, 0]
+                let speedsY = [0.6, -0.2, 0.1];
+                let speedsX = [-0.4, 0, 0]
                 let speedY = speedsY[index] !== undefined ? speedsY[index] : 0.5;
                 let speedX = speedsX[index] !== undefined ? speedsX[index] : 0;
                 img.style.transform = `translate(${st * speedX}px, ${st * speedY}px)`;

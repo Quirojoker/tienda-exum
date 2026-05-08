@@ -24,7 +24,11 @@
     bottom: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(10, 42, 67, 0.0), rgba(10, 42, 67, 0.3), rgba(10, 42, 67, 1.0));
+    background: linear-gradient(
+    rgba(0, 0, 0, 0.0),
+    rgba(2, 8, 30, 0.4),
+    rgba(2, 8, 30, 1.0)
+    );
     z-index: 10000;
 }
 
@@ -35,9 +39,26 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #0a2a43;
     z-index: 10000;
     mix-blend-mode: color;
+}
+
+#mi-componente-react {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#galaxy-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
 #parallax-container img {
@@ -53,6 +74,8 @@
 
 .parallax-img-4 {
     z-index: 2;
+    -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
 }
 
 #text {
@@ -78,7 +101,8 @@
     height: 100vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    z-index: 99999;
+    z-index: 100000;
+    background-color: black;
 }
 
 .age-verifier-spacer {
