@@ -1,3 +1,5 @@
+'Settings for Exum project'
+
 """
 Django settings for Store project.
 
@@ -37,16 +39,9 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "web-production-7d911.up.railway.app",
-    "licoresvalhalla.com",
-    "www.licoresvalhalla.com",
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://web-production-7d911.up.railway.app",
-    "https://licoresvalhalla.com",
-    "https://www.licoresvalhalla.com",
-    ] 
+CSRF_TRUSTED_ORIGINS = [] 
 
 # Application definition
 
@@ -99,7 +94,14 @@ WSGI_APPLICATION = 'licoreria.wsgi.application'
 
 #DATABASES = {'default': dj_database_url.parse(os.getenv('DATABASE_URL'),conn_max_age=600,ssl_require=False)}
 
-DATABASES = {'default': {'ENGINE': 'django.db.backends.postgresql','NAME': config('DB_NAME'),'USER': config('DB_USER'),'PASSWORD': config('DB_PASSWORD'),'HOST': config('DB_HOST'),'PORT': config('DB_PORT'),}}
+#DATABASES = {'default': {'ENGINE': 'django.db.backends.postgresql','NAME': config('DB_NAME'),'USER': config('DB_USER'),'PASSWORD': config('DB_PASSWORD'),'HOST': config('DB_HOST'),'PORT': config('DB_PORT'),}}
+
+DATABASES = {
+    'default': {
+        'ENGINE': config('DB_ENGINE', default='django.db.backends.sqlite3'),
+        'NAME': BASE_DIR / config('DB_NAME', default='db.sqlite3'),
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
