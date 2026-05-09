@@ -69,7 +69,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'licoreria.urls'
+ROOT_URLCONF = 'exum.urls'
 
 TEMPLATES = [
     {
@@ -86,7 +86,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'licoreria.wsgi.application'
+WSGI_APPLICATION = 'exum.wsgi.application'
 
 
 # Database
