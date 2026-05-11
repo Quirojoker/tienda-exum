@@ -10,16 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Quirojoker/Plataforma-de-Licores.git"
+    "url": "git+https://github.com/Quirojoker/tienda-exum.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/Quirojoker/Plataforma-de-Licores/issues"
+    "url": "https://github.com/Quirojoker/tienda-exum/issues"
   },
-  "homepage": "https://github.com/Quirojoker/Plataforma-de-Licores#readme",
+  "homepage": "https://github.com/Quirojoker/tienda-exum#readme",
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "gsap": "^3.15.0",
